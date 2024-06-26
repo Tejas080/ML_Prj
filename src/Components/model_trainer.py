@@ -1,0 +1,1 @@
+## training model (Confusion matrix, r2, adj r2value)
