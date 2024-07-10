@@ -25,3 +25,10 @@ Like data reading from MomgoDB, Savee model in Cloud
 exception.py
 Import Sys
 Any exception that is getting control then sys libray will have that inforamation
+
+
+logger.py
+whenever you want to do logging you need to import logger
+
+from src.logger import logging
+exe: python src/exception.py --> if you want to execute logging in exception file or any another
