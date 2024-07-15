@@ -32,3 +32,10 @@ whenever you want to do logging you need to import logger
 
 from src.logger import logging
 exe: python src/exception.py --> if you want to execute logging in exception file or any another
+
+
+## For Pushing file to GitHub
+git add .
+git status
+git commit -m "EDA and Problem statement"
+git push -u origin main
