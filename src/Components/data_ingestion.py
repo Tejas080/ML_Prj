@@ -18,6 +18,10 @@ from dataclasses import dataclass ## used in creating class variable
 
 ## all train data stored in artifact folder
 
+
+from src.Components.data_transformation import DataTransformation
+from src.Components.data_transformation import DataTransformationConfig
+
 @dataclass
 
 class DataIngestionConfig:
@@ -59,5 +63,13 @@ class Dataingestion:
 
 if __name__=="__main__":
     obj = Dataingestion()
-    obj.initiate_data_ingestion()
+    train_data,test_data = obj.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    #train_arr,test_arr=data_transformation.initiate_data_transformation(train_data,test_data)
+    data_transformation.initiate_data_transformation(train_data,test_data)
+
+
+    
+
 
