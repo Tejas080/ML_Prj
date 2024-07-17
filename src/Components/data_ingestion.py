@@ -22,6 +22,9 @@ from dataclasses import dataclass ## used in creating class variable
 from src.Components.data_transformation import DataTransformation
 from src.Components.data_transformation import DataTransformationConfig
 
+from src.Components.model_trainer import ModelTrainerConfig
+from src.Components.model_trainer import ModelTrainer
+
 @dataclass
 
 class DataIngestionConfig:
@@ -65,9 +68,17 @@ if __name__=="__main__":
     obj = Dataingestion()
     train_data,test_data = obj.initiate_data_ingestion()
 
+    
+    # data_transformation = DataTransformation()
+    # data_transformation.initiate_data_transformation(train_data,test_data)
+    # --->this step was for processor file genration wrt data_transformation
+
     data_transformation = DataTransformation()
-    #train_arr,test_arr=data_transformation.initiate_data_transformation(train_data,test_data)
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
 
     
